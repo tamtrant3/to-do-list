@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.ln {
+    border: 1px solid #424242;
+}
+
+:root {
+    --primary: #F4D9E7;
+    --p-light: #D5B2EC;
+    --p-dark: #9278DE; 
+    --accent: #3A55E3; 
+    --text-dark: #1b1b1b;
+    --font: monospace;
+    --border-black: 2px solid #453D48;
+    --border-purple: 2px solid #5E3692; 
+}
+
+/* STYLING */
+body {
+    padding: 4rem 16vw;
+    background-color: var(--primary);
+    background-image: url(../Images/background-3.svg);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    border-bottom: 2px solid #5E3692;
+    padding-bottom: 1rem;
+    color: #7E6EAE;
+}
+
+main {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main > * {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input > * {
+    border-radius: .24rem;
+    color: white;
+}
+
+input, button {
+    height: 56px;
+}
+
+input {
+    flex-grow: 3;
+    margin-right: .5rem;
+    border-style: none;
+    border: var(--border-purple);
+    background-color: var(--p-light);
+    font-size: 1.72rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+input:focus {
+    outline: none;
+    background-color: var(--accent);
+}
+
+button {
+    width: auto;
+    flex-grow: 1;
+    background-color: var(--p-dark);
+    border: none;
+    border: var(--border-purple);
+}
+
+button:hover {
+    background-color: var(--accent);
+}
+
+button:active{
+    background-color: var(--p-light);
+    transition: 30ms;
+    transform: scale(0.96);
+}
+
+@media only screen and (max-width: 640px) {
+    .input {
+        flex-direction: column;
+    }
+    input {
+        margin-right: 0;
+        margin-bottom: .5rem;
+    }
+}
+
+/*TODO ITEMS */
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: .24rem;
+    height: 40px;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* .todo:hover {
+    transform: scale(1.02);
+}
+
+.todo:active {
+    transform: scale(0.96);
+} */
+
+.todo p{
+    font-weight: 500;
+    font-size: large;
+}
+
+.todo .x {
+    font-weight: 600;
+    font-size: larger;
+}
+
+.done {
+    background-color: var(--p-dark);
+    color: var(--p-light);
+}
+
+.done p {
+    text-decoration: line-through;
+}
